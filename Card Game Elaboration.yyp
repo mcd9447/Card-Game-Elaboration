@@ -13,6 +13,8 @@
     {"id":{"name":"obj_start","path":"objects/obj_start/obj_start.yy",},"order":4,},
     {"id":{"name":"obj_win","path":"objects/obj_win/obj_win.yy",},"order":2,},
     {"id":{"name":"spr_4","path":"sprites/spr_4/spr_4.yy",},"order":3,},
+    {"id":{"name":"spr_title","path":"sprites/spr_title/spr_title.yy",},"order":9,},
+    {"id":{"name":"obj_title","path":"objects/obj_title/obj_title.yy",},"order":6,},
     {"id":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"order":0,},
     {"id":{"name":"room_win","path":"rooms/room_win/room_win.yy",},"order":1,},
     {"id":{"name":"sound_card","path":"sounds/sound_card/sound_card.yy",},"order":0,},

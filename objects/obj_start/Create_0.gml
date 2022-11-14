@@ -1,0 +1,1 @@
+instance_create_depth(560, 250, -9999, obj_title);
