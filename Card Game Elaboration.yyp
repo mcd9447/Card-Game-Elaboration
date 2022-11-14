@@ -3,6 +3,7 @@
   "resourceVersion": "1.6",
   "name": "Card Game Elaboration",
   "resources": [
+    {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},"order":6,},
     {"id":{"name":"spr_5","path":"sprites/spr_5/spr_5.yy",},"order":4,},
     {"id":{"name":"spr_4","path":"sprites/spr_4/spr_4.yy",},"order":3,},
     {"id":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"order":0,},
