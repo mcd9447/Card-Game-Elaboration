@@ -21,6 +21,7 @@ current_card = 0;
 flipped = false;
 
 cards = ds_list_create();
+faceup_cards = ds_list_create();
 
 num_card_type = 5;
 

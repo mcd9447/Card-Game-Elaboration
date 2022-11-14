@@ -1,5 +1,3 @@
-show_debug_message(current_state);
-
 timer--
 
 //dealing state
@@ -71,4 +69,28 @@ if (timer <= 0){
 if (current_state = 2){
 	player_timer -= room_speed * 0.0005;
 	
+	if (ds_list_size(faceup_cards) < 2 && mouse_check_button_pressed(mb_left)){
+		card_inst = instance_position(mouse_x, mouse_y, obj_card);
+		if (card_inst != noone){
+			if (card_inst.facedown) {
+				card_inst.facedown = false;
+				ds_list_add(faceup_cards, card_inst);
+				show_debug_message("card type is" + string(card_inst.card_type));
+			}
+		}
+	}
+	
+	if (ds_list_size(faceup_cards) == 2){
+		if (faceup_cards[|0].card_type == faceup_cards[|1].card_type){
+			show_debug_message("Match!");
+				instance_destroy(faceup_cards[|0], false);
+				instance_destroy(faceup_cards[|1], false);
+		}
+		else {
+			show_debug_message("No Match");
+				faceup_cards[|0].facedown = true;
+				faceup_cards[|1].facedown = true;
+		}
+	ds_list_clear(faceup_cards);
+	}
 }
