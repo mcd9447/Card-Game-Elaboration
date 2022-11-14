@@ -1,7 +1,7 @@
 {
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
-  "name": "Room1",
+  "name": "room_game",
   "isDnd": false,
   "volume": 1.0,
   "parentRoom": null,
@@ -25,7 +25,7 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_22CE2CA9","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_22CE2CA9","path":"rooms/room_game/room_game.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
