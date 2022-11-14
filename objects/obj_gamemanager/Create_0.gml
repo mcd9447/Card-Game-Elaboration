@@ -54,3 +54,15 @@ for (i = 0; i <= num_cards; i++) {
 	show_debug_message("the card type is" + string(card_inst.card_type));
 }
 
+
+
+//particle effects
+particle_system = part_system_create();
+explosion_particle_type = part_type_create();
+
+	part_type_shape(explosion_particle_type, pt_shape_spark);
+	part_type_size(explosion_particle_type, 0.2, 0.4, 0, 0);
+	part_type_speed(explosion_particle_type, 1, 5, 0, 0);
+	part_type_direction(explosion_particle_type, 0, 350, 0, 20);
+	part_type_life(explosion_particle_type, 20, 40);
+

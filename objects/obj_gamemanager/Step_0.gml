@@ -85,12 +85,22 @@ if (current_state = 2){
 	if (ds_list_size(faceup_cards) == 2){
 		if (faceup_cards[|0].card_type == faceup_cards[|1].card_type){
 			show_debug_message("Match!");
+				//choose a random color
+				var c = choose(c_fuchsia, c_purple, c_teal, c_blue);
+				//explode
+				part_particles_create_color(particle_system, faceup_cards[|0].x + 50, faceup_cards[|0].y + 75, explosion_particle_type, c, 100);
+				part_particles_create_color(particle_system, faceup_cards[|1].x + 50, faceup_cards[|1].y + 75, explosion_particle_type, c, 100);
+				//destroy cards
 				instance_destroy(faceup_cards[|0], false);
 				instance_destroy(faceup_cards[|1], false);
+				//add to player score
 				player_score += 1;
 		}
 		else {
 			show_debug_message("No Match");
+				//lose time for wrong guess
+				player_timer -= 2;
+				//flip back down
 				faceup_cards[|0].facedown = true;
 				faceup_cards[|1].facedown = true;
 		}
@@ -98,7 +108,7 @@ if (current_state = 2){
 	ds_list_clear(faceup_cards);
 	}
 	
-	//
+	//win or lose
 	if (player_score >= 10){
 		current_state = win_state;
 	}
@@ -113,7 +123,7 @@ if (current_state = 3){
 	room_goto(room_lose);
 }
 
-//lose state
+//win state
 if (current_state = 4){
 	room_goto(room_win);
 }
