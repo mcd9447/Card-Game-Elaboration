@@ -85,6 +85,7 @@ if (current_state = 2){
 	if (ds_list_size(faceup_cards) == 2){
 		if (faceup_cards[|0].card_type == faceup_cards[|1].card_type){
 			show_debug_message("Match!");
+			audio_play_sound(sound_win, 10, false);
 				//choose a random color
 				var c = choose(c_fuchsia, c_purple, c_teal, c_blue);
 				//explode
@@ -98,6 +99,7 @@ if (current_state = 2){
 		}
 		else {
 			show_debug_message("No Match");
+			audio_play_sound(sound_lose, 10, false);
 				//lose time for wrong guess
 				player_timer -= 2;
 				//flip back down
