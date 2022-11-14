@@ -2,6 +2,7 @@ show_debug_message(current_state);
 
 timer--
 
+//dealing state
 if (current_state = 0) {
 
 if (timer <= 0){
@@ -43,7 +44,18 @@ if (timer <= 0){
 	timer = 30;
 	
 	if (current_card >=20){
-		current_state = selecting_state;
+		current_state = flipping_state;
 	}
 }
+}
+
+//flipping state
+if (current_state = 1){
+	//ds_list_shuffle(cards);
+	obj_card.facedown = false;
+}
+
+//selecting state
+if (current_state = 2){
+	player_timer -= room_speed * 0.0005;
 }
