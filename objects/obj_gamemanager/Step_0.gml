@@ -51,11 +51,25 @@ if (timer <= 0){
 
 //flipping state
 if (current_state = 1){
-	//ds_list_shuffle(cards);
+	ds_list_shuffle(cards);
+	
+if (timer <= 0){
+	
+	if (flipped = false){
 	obj_card.facedown = false;
+	timer = 150;
+	flipped = true;
+	}
+	
+	else if (flipped = true){
+		obj_card.facedown = true;
+		current_state = selecting_state;
+		}
+}
 }
 
 //selecting state
 if (current_state = 2){
 	player_timer -= room_speed * 0.0005;
+	
 }

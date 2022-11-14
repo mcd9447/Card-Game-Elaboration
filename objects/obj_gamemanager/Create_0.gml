@@ -16,6 +16,8 @@ num_cards = 19;
 timer = 30;
 current_card = 0;
 
+flipped = false;
+
 cards = ds_list_create();
 
 num_card_type = 5;
