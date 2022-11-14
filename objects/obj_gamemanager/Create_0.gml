@@ -1,3 +1,5 @@
+randomize();
+
 //setting up game states
 dealing_state = 0;
 flipping_state = 1;
@@ -44,6 +46,8 @@ for (i = 0; i <= num_cards; i++) {
 	
 	cards[|i].target_x = 100;
 	cards[|i].target_y = 300 + (2*i);
+	
+	ds_list_shuffle(cards);
 	
 	show_debug_message("added card" + string(i));
 	show_debug_message("the card type is" + string(card_inst.card_type));

@@ -51,7 +51,6 @@ if (timer <= 0){
 
 //flipping state
 if (current_state = 1){
-	ds_list_shuffle(cards);
 	
 if (timer <= 0){
 	
