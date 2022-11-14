@@ -67,8 +67,10 @@ if (timer <= 0){
 
 //selecting state
 if (current_state = 2){
+	//counting down timer
 	player_timer -= room_speed * 0.0005;
 	
+	//selecting cards
 	if (ds_list_size(faceup_cards) < 2 && mouse_check_button_pressed(mb_left)){
 		card_inst = instance_position(mouse_x, mouse_y, obj_card);
 		if (card_inst != noone){
@@ -85,12 +87,33 @@ if (current_state = 2){
 			show_debug_message("Match!");
 				instance_destroy(faceup_cards[|0], false);
 				instance_destroy(faceup_cards[|1], false);
+				player_score += 1;
 		}
 		else {
 			show_debug_message("No Match");
 				faceup_cards[|0].facedown = true;
 				faceup_cards[|1].facedown = true;
 		}
+	//resetting ds list
 	ds_list_clear(faceup_cards);
 	}
+	
+	//
+	if (player_score >= 10){
+		current_state = win_state;
+	}
+	
+	if (player_score < 10 && player_timer <= 0){
+		current_state = lose_state;
+	}
+}
+
+//lose state
+if (current_state = 3){
+	room_goto(room_lose);
+}
+
+//lose state
+if (current_state = 4){
+	room_goto(room_win);
 }
